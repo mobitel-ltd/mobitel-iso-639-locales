@@ -5,6 +5,14 @@ class Locales {
     /** Class constructor */
     constructor() {
         this.list = list;
+        this.codeList = [];
+
+        let i;
+        for (i = 0; i < this.list.length; i++) {
+            this.codeList.push(this.list[i].locale);
+        }
+
+        this.codeList = Object.freeze(this.codeList);
     }
 
     /**
