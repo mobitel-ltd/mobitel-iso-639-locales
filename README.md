@@ -11,6 +11,7 @@ Using the module in previous versions of NodeJs does not guarantee correct works
 * [Example](#example)
 * [API](#api)
     * [.list](#list)
+    * [.codeList](#code-list)
     * [.validate()](#validate)
     * [.get()](#get)
 * [Testing](#testing)
@@ -27,6 +28,12 @@ npm i --save mobitel-iso-639-locales
 
 ```javascript
 const isoLocale = required('mobitel-iso-639-locales');
+
+// get locale list
+const locales = isoLocale.list; //=> array like [{locale: 'af', name: 'Afrikaans (South Africa)'}, ...];
+
+// get locale code list
+const localeCodes = isoLocale.codeList; //=> array like ['af', 'af-ZA' ...];
 
 // validate
 const valid = isoLocale.validate('af'); //=> true
@@ -45,7 +52,16 @@ Property - `{locale: String, name: String}[]` - contains full locale list.
 
 Example
 ```javascript
-const list = isoLocale.list; //=> objects list 
+const locales = isoLocale.list; //=> array like [{locale: 'af', name: 'Afrikaans (South Africa)'}, ...];
+```
+[<p align="right">up to navigation</p>](#navigation)
+
+### <a name="code-list">.codeList</a>
+Property - `String[]` - contains full locale codes list.
+
+Example
+```javascript
+const localeCodes = isoLocale.codeList; //=> array like ['af', 'af-ZA' ...];
 ```
 [<p align="right">up to navigation</p>](#navigation)
 
