@@ -162,10 +162,6 @@ describe('iso', function() {
                 test([]);
             });
 
-            it('call with empty Array', function() {
-                test([]);
-            });
-
             it('call with Array with wrong element', function() {
                 test([true, false]);
             });
@@ -262,10 +258,6 @@ describe('iso', function() {
 
             it('call with float Number', function() {
                 test(1.2);
-            });
-
-            it('call with empty Array', function() {
-                test([]);
             });
 
             it('call with empty Array', function() {
