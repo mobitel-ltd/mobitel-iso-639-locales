@@ -33,7 +33,10 @@ describe('iso', function() {
         });
 
         it('each element should be an object', function() {
-            assert.equal(iso.list.length > 0, true);
+            let i;
+            for (i = 0; i < iso.list.length; i++) {
+                assert.equal(typeof iso.list[i], 'object');
+            }
         });
 
         it('each element should have property "locale" as String', function() {
@@ -65,6 +68,33 @@ describe('iso', function() {
                 const backUp = {...iso.list[i]};
                 iso.list[i].locale = null;
                 assert.equal(JSON.stringify(iso.list[i]), JSON.stringify(backUp));
+            }
+        });
+    });
+
+    describe('iso.codeList', function() {
+        it('should be an array', function() {
+            assert.equal(typeof iso.codeList, 'object');
+            assert.equal(Array.isArray(iso.codeList), true);
+        });
+
+        it('should have positive length', function() {
+            assert.equal(iso.codeList.length > 0, true);
+        });
+
+        it('each element should be a string', function() {
+            let i;
+            for (i = 0; i < iso.codeList.length; i++) {
+                assert.equal(typeof iso.codeList[i], 'string');
+            }
+        });
+
+        it('each element should be freezed', function() {
+            let i;
+            for (i = 0; i < iso.codeList.length; i++) {
+                const backUp = iso.codeList[i];
+                iso.codeList[i] = null;
+                assert.equal(JSON.stringify(iso.codeList[i]), JSON.stringify(backUp));
             }
         });
     });
